@@ -1,0 +1,9 @@
+book\repository\BookRepository.class
+book\repository\UserRepository.class
+book\BookApplication.class
+book\entity\User.class
+book\controller\BookController.class
+book\controller\UserController.class
+book\service\UserServiceImpl.class
+book\entity\Book.class
+book\service\UserService.class

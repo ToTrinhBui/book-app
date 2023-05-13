@@ -1,0 +1,397 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  width: 100%;
+  font-size: 14px;
+  outline: none;
+  border: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  margin: 50px 100px;
+  min-height: 68vh;
+}
+
+.left,
+.right {
+  width: 50%;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+}
+
+/* Navbar */
+/*--------------header--------*/
+header {
+  background-color: #3949AB;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 100px;
+}
+
+header .user {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+header h3 {
+  color: white;
+}
+
+header h3:hover {
+  color: #ffb600;
+}
+
+/* Footer */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 80px;
+}
+
+footer h3 {
+  color: #ede9de;
+}
+
+footer p {
+  color: white;
+}
+
+footer {
+  background-color: #3949AB;
+  padding: 20px 100px;
+}
+
+.submit {
+  width: 150px;
+  padding: 10px;
+  border: none;
+  background: #ffff;
+  box-shadow: 6px 6px #ffff;
+  color: #ffb600;
+  font-size: 18px;
+  font-weight: 600;
+  display: block;
+  margin-left: auto;
+  margin-bottom: 30px;
+}
+
+/* Login */
+.login {
+  margin: 40px 80px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.login .left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #3949AB;
+  color: white;
+  border-radius: 24px 0 0 24px;
+  height: 550px;
+}
+
+.login .right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0px 24px 24px 0px;
+  border: 2px solid #cacff0;
+  height: 550px;
+}
+
+.input-user {
+  width: 400px;
+  margin: 40px auto;
+}
+
+.input-part {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: 2px solid #D0D0D0;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 5px;
+}
+
+.redirect p {
+  color: #828282;
+  font-size: 14px;
+}
+
+.login span {
+  color: #3949AB;
+}
+
+.input-user img {
+  width: 20px;
+  height: 20px;
+}
+
+.login button {
+  padding: 12px 30px;
+  background: #3949AB;
+  border: none;
+  color: white;
+  font-size: 14px;
+  border-radius: 40px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+/* Main */
+.inputAdd {
+  width: 180px;
+  text-align: center;
+  height: min-content;
+  padding: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  background: #d69f15;
+  color: white;
+  border-radius: 15px;
+}
+
+.flex1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.heading {
+  position: relative;
+}
+
+.heading::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 200px;
+  height: 4px;
+  background: #d69f15;
+}
+
+.heading h5 {
+  font-weight: 400;
+  letter-spacing: 2px;
+  padding-top: 20px;
+  color: #5f5f5f;
+}
+
+.heading h2 {
+  font-size: 30px;
+  font-weight: 400;
+  margin: 20px 0 40px 0;
+  color: #222222;
+}
+
+.main-table table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.main-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.main-table tr:hover {
+  background: #435bf77c;
+}
+
+.main-table th {
+  color: gray;
+  font-size: 20px;
+  border-bottom: 1px solid lightgray;
+  padding: 10px;
+}
+
+.main-table td {
+  color: black;
+  font-size: 17px;
+  border-bottom: 1px solid lightgray;
+  padding: 6px;
+}
+
+.main-table .link {
+  text-align: right;
+}
+
+.main-table .link a {
+  color: #d69f15;
+}
+
+/* Card */
+.card {
+  display: flex;
+  background: #F4F4F4;
+}
+
+.card .left {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 30px;
+  border: 3px solid #000000;
+  box-shadow: -6px 6px 0px #000000;
+}
+
+.card .left .big {
+  grid-column: span 2;
+  /* This makes the third div span two columns */
+}
+
+.card .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px;
+  align-items: center;
+  border: 3px solid #000000;
+  box-shadow: 6px 6px #000000;
+}
+
+.up-img {
+  width: 300px;
+  height: 300px;
+  background: #fff url(../public/images/upload.png) no-repeat;
+  background-size: 80%;
+  background-position: center;
+  border-radius: 5px;
+  border: 2px solid #9e9595c4;
+}
+
+.img-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.img-input::file-selector-button {
+  content: 'Choose file';
+  background: #000000;
+  box-shadow: 4px 4px #000000;
+  color: white;
+  padding: 3px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.upload {
+  width: 150px;
+  padding: 10px;
+  border: none;
+  background: #000000;
+  box-shadow: 6px 6px #000000;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  margin-left: auto;
+}
+
+.card label {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.card span {
+  color: red;
+}
+
+.card input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #9e9595c4;
+  margin: 10px 0;
+}
+
+.card p {
+  padding: 10px;
+  margin: 10px 0;
+  color: #666666;
+  font-weight: 500;
+}
+
+.card p:hover {
+  color: #d69f15;
+}
+
+.card ::placeholder {
+  color: rgb(192, 192, 192);
+}
+
+/* Require */
+.require p {
+  font-size: 18px;
+}
+
+.require span {
+  font-weight: 800;
+  color: #3949AB;
+}
+
+@media (max-width: 780px) {
+  header {
+    padding: 20px 10px;
+  }
+
+  .container {
+    margin: 10px;
+  }
+
+  .flex1 {
+    display: block;
+  }
+
+  footer {
+    padding: 10px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .card {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .left {
+    flex-basis: 100%;
+  }
+
+  .right {
+    flex-basis: 100%;
+  }
+}
