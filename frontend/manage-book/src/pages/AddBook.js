@@ -36,31 +36,19 @@ export default function AddBook() {
         setIsLogin(login);
     }, []);
 
-    const [showDiv, setShowDiv] = useState(false);
-
-    useEffect(() => {
-        const timeout = setTimeout(() => {
-            setShowDiv(true);
-        }, 200);
-
-        return () => clearTimeout(timeout);
-    }, []);
 
     return (
         <>
             <Navbar />
             <>
-                {showDiv && <>
-                    {isLogin ?
-                        (<>
-                            <Card title='Add Book' isChange={true} onSave={handleSave} />
-                            <Footer content='Save' isShow={true}/>
-                        </>) :
-                        (<>
-                            <Require />
-                        </>)
-                    }
-                </>
+                {isLogin ?
+                    (<>
+                        <Card title='Add Book' isChange={true} onSave={handleSave} />
+                        <Footer content='Save' isShow={true} />
+                    </>) :
+                    (<>
+                        <Require />
+                    </>)
                 }
             </>
         </>

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Loading from "./Loading";
 
 export default function Navbar() {
-    const [isLogin, setIsLogin] = useState(localStorage.getItem("isLogin") || false);
+    const [isLogin, setIsLogin] = useState(false);
     const [username, setUsername] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
 
     const logout = () => {
         setIsLogin(false);
@@ -14,35 +16,37 @@ export default function Navbar() {
         window.location.reload(); // reload the page after logout
     };
 
-
     useEffect(() => {
-        const email = localStorage.getItem("user");
-        if (email) {
-            const input = email.substring(1, email.length - 1)
-            axios
-                .get(`http://localhost:8081/auth/${input}`)
-                .then((response) => setUsername(response.data.username))
-                .catch((error) => console.error(error));
-        }
+        const fetchData = async () => {
+            const email = localStorage.getItem('user');
+            if (email) {
+                const input = email.substring(1, email.length - 1);
+                try {
+                    const response = await axios.get(`http://localhost:8081/auth/${input}`);
+                    setUsername(response.data.username);
+                    setIsLoading(false);
+                } catch (error) {
+                    console.error(error);
+                }
+            }
+        };
+
+        fetchData();
     }, []);
 
-    const [showDiv, setShowDiv] = useState(false);
-
     useEffect(() => {
-        const timeout = setTimeout(() => {
-            setShowDiv(true);
-        }, 200);
-
-        return () => clearTimeout(timeout);
+        const login = JSON.parse(localStorage.getItem('isLogin'));
+        setIsLogin(login);
     }, []);
-
+    
     return (
         <>
             <header>
                 <Link to="/">
                     <h3>Home</h3>
                 </Link>
-                {showDiv &&
+                {isLoading ?
+                    <Loading /> :
                     <div className="user">
                         {isLogin && username ? (
                             <>

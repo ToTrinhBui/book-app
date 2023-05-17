@@ -45,6 +45,10 @@ button {
   font-size: 12px;
 }
 
+.padding {
+  padding: 40px;
+}
+
 /* Navbar */
 /*--------------header--------*/
 header {
@@ -109,6 +113,7 @@ footer {
   display: flex;
   text-align: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .login .left {
@@ -133,7 +138,7 @@ footer {
 }
 
 .input-user {
-  width: 400px;
+  width: 335px;
   margin: 40px auto;
 }
 
@@ -361,6 +366,29 @@ footer {
   color: #3949AB;
 }
 
+/* Loading */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading {
+  border: 3px solid hsla(224, 100%, 62%, 0.2);
+  border-top-color: #3cb1ff;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
 @media (max-width: 780px) {
   header {
     padding: 20px 10px;
@@ -382,6 +410,7 @@ footer {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
+
   .card {
     display: flex;
     flex-wrap: wrap;
@@ -393,5 +422,14 @@ footer {
 
   .right {
     flex-basis: 100%;
+  }
+
+  .login {
+    margin: 15px;
+    gap: 10px;
+  }
+
+  .input-user{
+    width: 250px;
   }
 }

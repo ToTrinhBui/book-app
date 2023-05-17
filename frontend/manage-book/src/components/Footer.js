@@ -8,7 +8,7 @@ export default function Footer(props) {
             {props.isShow && props.content !== 'Edit' ? (
                 <button className="submit" form="form-book" type="submit">{props.content}</button>
             ) : (
-                props.content === 'Edit' && (
+                props.content === 'Edit'  && props.data && props.data.id && (
                     <Link to={`/edit/${props.data.id}`}><button className="submit">{props.content}</button></Link>
                 )
             )}
